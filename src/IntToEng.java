@@ -14,7 +14,7 @@ public class IntToEng {
         	if(n==0)return "zero";
         	StringBuffer sb=new StringBuffer();
         	int b=n/10;
-        	sb.append(sennokurai(n));	
+        	sb.append(hyakumannokurai(n));	
             return sb.toString();     
         }
         static String ichinokurai(int a){
@@ -59,13 +59,20 @@ public class IntToEng {
         static String sennokurai(int n){
         	int a =n/1000;
         	int b =n%1000;
-        	String sen="";
-        	if(a==10){
-        		sen="ten thousand ";
-        	}else if(a !=0){
-        		sen=ichinokurai(a)+" thousand ";
+        	String sen="";    
+        	if(a!=0){
+        		sen=hyakunokurai(a)+" thousand ";
         	}
         	return sen+hyakunokurai(b);
+        }
+        static String hyakumannokurai(int n){
+        	int a=n/1000000;
+        	int b=n%1000000;
+        	String hyakuman="";
+        	if(a!=0){
+        			hyakuman=hyakunokurai(a)+" million ";  
+        	}
+        	return hyakuman+sennokurai(b);
         }
         static String teen(int n){
         	if(n==10) return "ten";
