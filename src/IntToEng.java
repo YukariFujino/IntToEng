@@ -38,12 +38,27 @@ public class IntToEng {
         }
         static String junokurai(int b){
         	if(b==2) return "twenty";
-        		
+        	if(b==3) return "thirty";
+        	if(b==4) return "fourty";
+        	if(b==5) return "fifty";
+        	if(b==6) return "sixty";
+        	if(b==7) return "seventy";
+        	if(b==8) return "eighty";
+        	if(b==9) return "ninety";
         	
         	return "";
         }
         static String teen(int n){
+        	if(n==10) return "ten";
         	if(n==11)return "eleven";
+        	if(n==12) return "twelve";
+        	if(n==13) return "thirteen";
+        	if(n==14) return "fourteen";
+        	if(n==15) return "fifteen";
+        	if(n==16) return "sixteen";
+        	if(n==17) return "seventeen";
+        	if(n==18) return "eighteen";
+        	if(n==19) return "nineteen";
         	
         	return "";
         }
