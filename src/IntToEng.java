@@ -43,6 +43,7 @@ public class IntToEng {
         	return "";
         }
         static String teen(int n){
+        	if(n==11)return "eleven";
         	return "";
         }
 }
