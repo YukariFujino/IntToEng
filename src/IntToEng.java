@@ -13,15 +13,8 @@ public class IntToEng {
         static String translateEng(int n) {	
         	if(n==0)return "zero";
         	StringBuffer sb=new StringBuffer();
-        	int a=n%10;
         	int b=n/10;
-        	if(b==1) {
-        		sb.append(teen(n)) ;     		
-        	}
-        	else{
-        		sb.append(junokurai(b));
-        		sb.append(ichinokurai(a));
-        	}
+        	sb.append(sennokurai(n));	
             return sb.toString();     
         }
         static String ichinokurai(int a){
@@ -36,17 +29,43 @@ public class IntToEng {
         	if(a==9)return "nine";
         	return "";
         }
-        static String junokurai(int b){
-        	if(b==2) return "twenty";
-        	if(b==3) return "thirty";
-        	if(b==4) return "fourty";
-        	if(b==5) return "fifty";
-        	if(b==6) return "sixty";
-        	if(b==7) return "seventy";
-        	if(b==8) return "eighty";
-        	if(b==9) return "ninety";
+        static String junokurai(int n){
+        	int a = n%10;
+        	String ichi = ichinokurai(a);
+        	int b = n/10;
+        	String ju ="";
+        	if(b==1) return teen(n);
+        	if(b==2) ju= "twenty ";
+        	if(b==3) ju= "thirty ";
+        	if(b==4) ju= "fourty ";
+        	if(b==5) ju= "fifty ";
+        	if(b==6) ju= "sixty ";
+        	if(b==7) ju= "sevent ";
+        	if(b==8) ju= "eighty ";
+        	if(b==9) ju= "ninety ";
         	
-        	return "";
+        	return ju+ichi;
+        }
+        static String hyakunokurai(int n){
+        	int a = n/100;
+        	int b = n%100;
+        	String hyaku="";
+        	if(a !=0){
+        		hyaku=ichinokurai(a)+" hundred ";
+        	}
+        	
+        	return hyaku+junokurai(b);
+        }
+        static String sennokurai(int n){
+        	int a =n/1000;
+        	int b =n%1000;
+        	String sen="";
+        	if(a==10){
+        		sen="ten thousand ";
+        	}else if(a !=0){
+        		sen=ichinokurai(a)+" thousand ";
+        	}
+        	return sen+hyakunokurai(b);
         }
         static String teen(int n){
         	if(n==10) return "ten";
