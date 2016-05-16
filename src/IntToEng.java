@@ -40,7 +40,7 @@ public class IntToEng {
         	if(b==4) ju= "fourty ";
         	if(b==5) ju= "fifty ";
         	if(b==6) ju= "sixty ";
-        	if(b==7) ju= "sevent ";
+        	if(b==7) ju= "seventy ";
         	if(b==8) ju= "eighty ";
         	if(b==9) ju= "ninety ";
         	
