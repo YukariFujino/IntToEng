@@ -2,7 +2,13 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
 public class Test {
-	
+	@org.junit.Test
+	public void ゼロの表示() {
+		IntToEng ite = new IntToEng();
+		String expected = "zero";
+		String actual = ite.translateEng(0);
+		assertThat(actual,is(expected));
+	}
 	@org.junit.Test
 	public void 一桁目の表示() {
 		IntToEng ite = new IntToEng();
@@ -39,6 +45,13 @@ public class Test {
 		assertThat(actual,is(expected));
 	}
 	@org.junit.Test
+	public void 四桁目の表示２() {
+		IntToEng ite = new IntToEng();
+		String expected = "six thousand seven hundred eight";
+		String actual = ite.translateEng(6708);
+		assertThat(actual,is(expected));
+	}
+	@org.junit.Test
 	public void 五桁目の表示() {
 		IntToEng ite = new IntToEng();
 		String expected = "twenty four thousand six hundred fifty seven";
@@ -60,6 +73,13 @@ public class Test {
 		assertThat(actual,is(expected));
 	}
 	@org.junit.Test
+	public void 七桁目の表示２() {
+		IntToEng ite = new IntToEng();
+		String expected = "one million six hundred four thousand nine hundred eighty three";
+		String actual = ite.translateEng(1604983);
+		assertThat(actual,is(expected));
+	}
+	@org.junit.Test
 	public void 八桁目の表示() {
 		IntToEng ite = new IntToEng();
 		String expected = "ninety four million six hundred fifty two thousand three hundred eighty seven";
@@ -71,6 +91,13 @@ public class Test {
 		IntToEng ite = new IntToEng();
 		String expected = "one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine";
 		String actual = ite.translateEng(123456789);
+		assertThat(actual,is(expected));
+	}
+	@org.junit.Test
+	public void 九桁目の表示2() {
+		IntToEng ite = new IntToEng();
+		String expected = "one hundred twenty three million four hundred fifty six thousand seven hundred nine";
+		String actual = ite.translateEng(123456709);
 		assertThat(actual,is(expected));
 	}
 }
